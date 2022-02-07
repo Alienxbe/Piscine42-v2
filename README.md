@@ -34,6 +34,13 @@ klist > klist.txt
 ### Ex04
 ls -AmpUt
 ### Ex05
+!/bin/sh
 git log -5 --pretty=format:"%H"
 ### Ex06
-
+!/bin/sh
+git status --ignored -s | grep '!!' | cut -c4-
+### Ex07
+patch a sw.diff
+mv a b
+### Ex08
+find . -type f \( -name "*~" -o "#*#"\) -print -delete
