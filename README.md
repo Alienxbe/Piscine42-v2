@@ -32,10 +32,10 @@ touch -ht 06012220 test6
 kinit
 klist > klist.txt
 ### Ex04
-ls -AmpUt
+ls -mpUt
 ### Ex05
 !/bin/sh
-git log -5 --pretty=format:"%H"
+git log -n 5 --pretty="%H"
 ### Ex06
 !/bin/sh
 git status --ignored -s | grep '!!' | cut -c4-
@@ -44,3 +44,14 @@ patch a sw.diff
 mv a b
 ### Ex08
 find . -type f \( -name "*~" -o "#*#"\) -print -delete
+### Ex09
+41	string	42	42 file
+
+## Shell01
+
+### Ex01
+id -Gn $FT_USER | tr ' ' ',' | tr -d '\n'
+### Ex02
+find . -type f -name "*.sh" -print | sed "s/.\///" | sed "s/\(.*\).sh/\1/"
+### Ex03
+find . \( -type f -o -type d \) -print | wc -l | tr -d ' '
