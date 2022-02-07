@@ -1,0 +1,5 @@
+Credentials cache: API:ED7566FC-84A7-41F9-9B92-09DEB3E5FF5B
+        Principal: maykman@S19.BE
+
+  Issued                Expires               Principal
+Feb  7 09:48:53 2022  Feb  7 19:48:44 2022  krbtgt/S19.BE@S19.BE
