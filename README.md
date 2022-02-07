@@ -55,3 +55,5 @@ id -Gn $FT_USER | tr ' ' ',' | tr -d '\n'
 find . -type f -name "*.sh" -print | sed "s/.\///" | sed "s/\(.*\).sh/\1/"
 ### Ex03
 find . \( -type f -o -type d \) -print | wc -l | tr -d ' '
+### Ex04
+ifconfig -a | grep -i ether | sed /autoselect/d | tr -d '\t ' | sed "s/ether//"
