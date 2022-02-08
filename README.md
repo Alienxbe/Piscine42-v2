@@ -57,3 +57,10 @@ find . -type f -name "*.sh" -print | sed "s/.\///" | sed "s/\(.*\).sh/\1/"
 find . \( -type f -o -type d \) -print | wc -l | tr -d ' '
 ### Ex04
 ifconfig -a | grep -i ether | sed /autoselect/d | tr -d '\t ' | sed "s/ether//"
+### Ex05
+touch
+Dont forget to remove eol characterr to set text only to 42
+### Ex06
+ls -l | awk 'NR%2'
+### Ex07
+cat /etc/passwd | grep -v '#' | awk '!(NR % 2)' | cut -f1 -d":" | rev | sort -r | awk "NR>=$FT_LINE1 && NR<=$FT_LINE2" | tr '\n' ',' | sed 's/,$/./' | tr -d '\n'

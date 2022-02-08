@@ -1,3 +1,3 @@
 #!/bin/sh
 
-find . -type f -name "*.sh" -print | sed "s/.\///" | sed "s/\(.*\).sh/\1/"
+find . -type f -name "*.sh" -exec basename "{}" .sh ";" 
