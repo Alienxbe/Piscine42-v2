@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 07:44:57 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/09 09:16:19 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/09 12:43:51 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int	is_sorted(int *tab, int size)
 
 int	main(void)
 {
-	int	tab[] = {10, 1, 5, 3, 4, 19, 2, 5, 24, 36, 89, 100, 200, 152, 92};
-	int	i = -1;
+	int	tab[] = {1, 5, 2, 6, 3};
+	int	size = 5;
 
-	ft_sort_int_tab(tab, 15);
-	while (++i < 15)
-		printf("%d\n", tab[i]);
+	ft_sort_int_tab(tab, 5);
+	while (size--)
+		printf("%d\n", tab[4 - size]);
 	return (0);
 }
