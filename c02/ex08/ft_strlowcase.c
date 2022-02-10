@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 11:14:53 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/10 09:03:55 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/10 09:00:37 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/10 09:01:30 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_num(char c)
+int	is_upper(char c)
 {
-	return (c >= '0' && c <= '9');
+	return (c >= 'A' && c <= 'Z');
 }
 
-int	ft_str_is_alpha(char *str)
+char	to_lower(char c)
 {
-	while (str && *str)
-		if (!is_num(*str++))
-			return (0);
-	return (1);
+	if (is_upper(c))
+		return (c + 32);
+	return (c);
+}
+
+char	*ft_strlowcase(char *str)
+{
+	int	i;
+
+	i = -1;
+	while (str && str[++i])
+		str[i] = to_lower(str[i]);
+	return (str);
 }

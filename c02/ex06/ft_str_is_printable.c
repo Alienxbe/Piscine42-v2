@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 11:14:53 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/10 09:03:55 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/10 08:40:48 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/10 08:43:11 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_num(char c)
+int	is_print(char c)
 {
-	return (c >= '0' && c <= '9');
+	return (c >= 32 && c <= 126);
 }
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_printable(char *str)
 {
 	while (str && *str)
-		if (!is_num(*str++))
+		if (!is_print(*str))
 			return (0);
 	return (1);
 }

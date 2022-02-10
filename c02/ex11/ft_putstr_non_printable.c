@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 11:14:53 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/10 09:03:55 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/10 16:42:59 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/10 18:04:16 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_num(char c)
+#include <unistd.h>
+
+void	ft_putchar(char c)
 {
-	return (c >= '0' && c <= '9');
+	write(1, &c, 1);
 }
 
-int	ft_str_is_alpha(char *str)
+void	ft_putstr_non_printable(char *str)
 {
+	char	*base_hexa;
+
+	base_hexa = "0123456789abcdef";
 	while (str && *str)
-		if (!is_num(*str++))
-			return (0);
-	return (1);
+	{
+		if (!(*str >= 32 && *str <= 126))
+		{
+			ft_putchar('\\');
+			ft_putchar(base_hexa[*str / 16]);
+			ft_putchar(base_hexa[*str % 16]);
+		}
+		else
+			ft_putchar(*str);
+		str++;
+	}
 }
