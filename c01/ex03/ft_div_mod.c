@@ -6,12 +6,14 @@
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:09:49 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/09 08:10:46 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/10 08:24:40 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
+	if (!div  || !mod || !b)
+		return ;
 	*div = a / b;
 	*mod = a % b;
 }
