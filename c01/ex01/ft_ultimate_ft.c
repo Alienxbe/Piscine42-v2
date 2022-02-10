@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mykman <mykman@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:04:11 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/09 08:06:47 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/09 13:19:14 by mykman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	ft_ultimate_ft(int *********nbr)
 {
-	*********nbr = 42;
+	if (nbr && *nbr && **nbr && ***nbr && ****nbr && *****nbr && ******nbr
+		&& *******nbr && ********nbr)
+		*********nbr = 42;
 }
