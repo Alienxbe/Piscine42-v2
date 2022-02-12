@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 09:47:11 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/12 20:20:40 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/12 20:37:55 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/12 21:04:36 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
+	int	dest_size;
 	int	i;
 
-	i = -1;
-	while (str && str[i])
+	i = 0;
+	while (dest[i])
 		i++;
-	return (i);
-}
-
-void	ft_memcpy(char *dest, char *src, int n)
-{
-	while (dest && src && n--)
-		*dest++ = *src++;
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-
-	i = ft_strlen(src);
-	if (i <= size - 1)
-		ft_memcpy(dest, src, i + 1);
-	else if (size)
-	{
-		ft_memcpy(dest, src, size);
-		dest[size] = 0;
-	}
-	return (i);
+	dest_size = i--;
+	while (src[++i - dest_size])
+		dest[i] = src[i - dest_size];
+	dest[i] = 0;
+	return (dest);
 }

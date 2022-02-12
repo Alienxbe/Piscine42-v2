@@ -1,42 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_ft_strcmp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 09:47:11 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/12 20:20:40 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/12 20:22:13 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/12 20:31:18 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
-	i = -1;
-	while (str && str[i])
+	i = 0;
+	while (s1[i] && s2 [i] && s1[i] == s2[i])
 		i++;
-	return (i);
-}
-
-void	ft_memcpy(char *dest, char *src, int n)
-{
-	while (dest && src && n--)
-		*dest++ = *src++;
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-
-	i = ft_strlen(src);
-	if (i <= size - 1)
-		ft_memcpy(dest, src, i + 1);
-	else if (size)
-	{
-		ft_memcpy(dest, src, size);
-		dest[size] = 0;
-	}
-	return (i);
+	return (s1[i] - s2[i]);
 }

@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/10 09:47:11 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/12 20:20:40 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/12 21:11:46 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/12 21:22:02 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
 	int	i;
 
-	i = -1;
-	while (str && str[i])
-		i++;
-	return (i);
-}
-
-void	ft_memcpy(char *dest, char *src, int n)
-{
-	while (dest && src && n--)
-		*dest++ = *src++;
-}
-
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-	unsigned int	i;
-
-	i = ft_strlen(src);
-	if (i <= size - 1)
-		ft_memcpy(dest, src, i + 1);
-	else if (size)
+	if (!*to_find)
+		return (str);
+	while (*str)
 	{
-		ft_memcpy(dest, src, size);
-		dest[size] = 0;
+		i = 0;
+		while (str[i] && to_find[i] && str[i] == to_find[i])
+			i++;
+		if (!to_find[i])
+			return (str);
+		str++;
 	}
-	return (i);
+	return (0);
 }
