@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/09 09:47:14 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/10 20:57:46 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/11 12:56:49 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/12 20:02:57 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ void			*ft_print_memory(void *addr, unsigned int size);
 
 int	main(void)
 {
-	int	a;
-	char	c;
+	char	str[] = "ceci est un chaine";
+	char	str2[] = "Bonjour comment allez vous ?";
 
-	a = 10;
-	c = 23;
+	(void)str;
 	//printf("%d\n", 257 & 0xff);
-	ft_print_memory(&a, 20);
+	ft_print_memory(str2, 1000);
 	return (0);
 }
