@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:42:59 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/10 18:04:16 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/14 16:57:43 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,23 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
+void	ft_puthex(unsigned char c)
+{
+	char *base;
+
+	base = "0123456789abcdef";
+	ft_putchar(base[c / 16]);
+	ft_putchar(base[c % 16]);
+}
+
 void	ft_putstr_non_printable(char *str)
 {
-	char	*base_hexa;
-
-	base_hexa = "0123456789abcdef";
-	while (str && *str)
+	while (*str)
 	{
-		if (!(*str >= 32 && *str <= 126))
+		if (*str < ' ' || *str == 127)
 		{
 			ft_putchar('\\');
-			ft_putchar(base_hexa[*str / 16]);
-			ft_putchar(base_hexa[*str % 16]);
+			ft_puthex(*str);
 		}
 		else
 			ft_putchar(*str);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 11:14:53 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/10 09:03:55 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/14 14:56:09 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int	is_num(char c)
 	return (c >= '0' && c <= '9');
 }
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_numeric(char *str)
 {
 	while (str && *str)
 		if (!is_num(*str++))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 09:47:11 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/12 20:20:40 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/14 22:42:25 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@ int	ft_strlen(char *str)
 {
 	int	i;
 
-	i = -1;
-	while (str && str[i])
+	i = 0;
+	while (str[i])
 		i++;
 	return (i);
 }
 
-void	ft_memcpy(char *dest, char *src, int n)
+void	ft_memcpy(char *dest, char *src, unsigned int n)
 {
-	while (dest && src && n--)
+	while (n--)
 		*dest++ = *src++;
 }
 
@@ -31,12 +31,12 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	unsigned int	i;
 
 	i = ft_strlen(src);
-	if (i <= size - 1)
+	if (i + 1 < size)
 		ft_memcpy(dest, src, i + 1);
 	else if (size)
 	{
-		ft_memcpy(dest, src, size);
-		dest[size] = 0;
+		ft_memcpy(dest, src, size - 1);
+		dest[size - 1] = 0;
 	}
 	return (i);
 }

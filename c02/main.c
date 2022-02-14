@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 12:56:49 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/12 20:02:57 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/14 22:38:51 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 char			*ft_strcpy(char *dest, char *src);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
@@ -29,11 +30,12 @@ void			*ft_print_memory(void *addr, unsigned int size);
 
 int	main(void)
 {
-	char	str[] = "ceci est un chaine";
-	char	str2[] = "Bonjour comment allez vous ?";
+	char	src[] = "987654";
+	char	dest1[100] = "0123456";
+	char	dest2[100] = "0123456";
+	int		n = 30;
 
-	(void)str;
-	//printf("%d\n", 257 & 0xff);
-	ft_print_memory(str2, 1000);
+	printf("%d: `%s`\n", ft_strlcpy(dest1, src, n), dest1);
+	printf("%lu: `%s`\n", strlcpy(dest2, src, n), dest2);
 	return (0);
 }
