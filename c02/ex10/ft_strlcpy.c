@@ -6,13 +6,13 @@
 /*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 09:47:11 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 12:55:08 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/15 13:03:25 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i])
