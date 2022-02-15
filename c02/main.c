@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 12:56:49 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/14 22:38:51 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/15 12:54:32 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,5 @@ void			*ft_print_memory(void *addr, unsigned int size);
 
 int	main(void)
 {
-	char	src[] = "987654";
-	char	dest1[100] = "0123456";
-	char	dest2[100] = "0123456";
-	int		n = 30;
-
-	printf("%d: `%s`\n", ft_strlcpy(dest1, src, n), dest1);
-	printf("%lu: `%s`\n", strlcpy(dest2, src, n), dest2);
 	return (0);
 }

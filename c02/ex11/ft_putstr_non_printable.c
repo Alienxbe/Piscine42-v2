@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:42:59 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/14 16:57:43 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/15 12:55:19 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putchar(char c)
 
 void	ft_puthex(unsigned char c)
 {
-	char *base;
+	char	*base;
 
 	base = "0123456789abcdef";
 	ft_putchar(base[c / 16]);
