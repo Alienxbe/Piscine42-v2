@@ -6,11 +6,11 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 23:28:05 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/16 00:50:55 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/16 09:43:26 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
 	long	x;
 	int		y;
