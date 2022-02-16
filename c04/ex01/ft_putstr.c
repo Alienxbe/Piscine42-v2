@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:41:18 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 14:02:19 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/15 19:31:47 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putstr(char *str)
 {
 	while (str && *str)
-		write(1, str, 1);
+		write(1, str++, 1);
 }

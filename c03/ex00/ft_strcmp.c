@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 13:22:48 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 17:36:25 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/12 20:22:13 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/15 15:37:21 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_strlen(char *str);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int		ft_atoi(char *str);
-void	ft_putnbr_base(int nbr, char *base);
-int		ft_atoi_base(char *str, char *base);
-
-int	main(void)
+int	ft_strcmp(char *s1, char *s2)
 {
-	ft_putstr("TEST\n");
-	return (0);
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

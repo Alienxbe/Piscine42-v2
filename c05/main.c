@@ -5,22 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 13:22:48 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 17:36:25 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/15 16:07:22 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/16 00:51:55 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_strlen(char *str);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int		ft_atoi(char *str);
-void	ft_putnbr_base(int nbr, char *base);
-int		ft_atoi_base(char *str, char *base);
+int	ft_iterative_factorial(int nb);
+int	ft_recursive_factorial(int nb);
+int	ft_iterative_power(int nb, int power);
+int	ft_recursive_power(int nb, int power);
+int	ft_fibonacci(int index);
+int	ft_sqrt(int nb);
+int	ft_is_prime(int nb);
 
-int	main(void)
+int main(void)
 {
-	ft_putstr("TEST\n");
+	printf("%d\n", ft_is_prime(50));
 	return (0);
 }

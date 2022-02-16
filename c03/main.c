@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 20:15:28 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 13:36:37 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/15 20:10:33 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 
 int	main(void)
 {
-	char	src[] = "name";
-	char	dest1[13] = "Bonjour ";
-	char	dest2[13] = "Bonjour ";
+	char	src[] = "hello";
+	char	src2[] = "hella";
 
-	printf("%d: `%s`\n", ft_strlcat(dest1, src, 8), dest1);
-	printf("%lu: `%s`\n", strlcat(dest2, src, 8), dest2);
+	printf("%d\n", ft_strcmp(src, src2));
+	printf("%d\n", strcmp(src, src2));
 	return (0);
 }

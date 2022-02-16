@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 13:22:48 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 17:36:25 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/15 16:58:51 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/15 18:27:56 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_strlen(char *str);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int		ft_atoi(char *str);
-void	ft_putnbr_base(int nbr, char *base);
-int		ft_atoi_base(char *str, char *base);
-
-int	main(void)
+int	ft_recursive_factorial(int nb)
 {
-	ft_putstr("TEST\n");
-	return (0);
+	if (nb < 0)
+		return (0);
+	if (!nb)
+		return (1);
+	return (nb * ft_recursive_factorial(nb - 1));
 }

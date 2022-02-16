@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft_strcmp.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <maykman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 20:22:13 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 12:57:36 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/15 23:28:05 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/16 00:50:55 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int ft_sqrt(int nb)
 {
-	int	i;
+	long	x;
+	int		y;
 
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return (s1[i] - s2[i]);
+	x = nb;
+	y = 1;
+	if (nb < 0)
+		return (0);
+	while (x - y > 1)
+	{
+		x = (x + y) / 2;
+		y = nb / x;
+	}
+	if (x * x == nb)
+		return (x);
+	return (0);
 }

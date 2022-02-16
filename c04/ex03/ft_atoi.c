@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:47:56 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 14:02:26 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/15 19:28:58 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ int	ft_atoi(char *str)
 	while (str && ft_isspace(*str))
 		str++;
 	while (str && (*str == '+' || *str == '-'))
-	{
-		sign = -sign;
-		str++;
-	}
+		if (*str++ == '-')
+			sign = -sign;
 	while (str && ft_isdigit(*str))
 	{
 		n = n * 10 + (*str - '0');

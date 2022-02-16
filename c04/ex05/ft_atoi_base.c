@@ -6,11 +6,9 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:52:22 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 15:08:30 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/15 19:29:28 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isspace(char c)
 {
@@ -65,10 +63,8 @@ int	ft_atoi_base(char *str, char *base)
 	while (ft_isspace(*str))
 		str++;
 	while (*str == '+' || *str == '-')
-	{
-		sign = -sign;
-		str++;
-	}
+		if (*str++ == '-')
+				sign = -sign;
 	while (*str && ft_index(*str, base) >= 0)
 		n = n * base_len + ft_index(*str++, base);
 	return (n * sign);
