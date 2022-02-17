@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 11:55:31 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/17 03:59:17 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/17 03:15:05 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/17 04:00:34 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-void	ft_putendl(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	while (str && *str)
-		write(1, str++, 1);
-	write(1, "\n", 1);
-}
-
-int	main(int argc, char **argv)
-{
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (++i < argc)
-		ft_putendl(argv[i]);
-	return (0);
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_memcpy(char *dest, char *src, unsigned int n)
+{
+	while (dest && n--)
+		dest[n] = src[n];
+	return (dest);
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dest;
+
+	dest = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
+	return (ft_memcpy(dest, src, ft_strlen(src) + 1));
 }

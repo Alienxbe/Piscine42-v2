@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 20:15:28 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 20:10:33 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/17 03:58:08 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,5 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 
 int	main(void)
 {
-	char	src[] = "hello";
-	char	src2[] = "hella";
-
-	printf("%d\n", ft_strcmp(src, src2));
-	printf("%d\n", strcmp(src, src2));
 	return (0);
 }

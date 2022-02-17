@@ -5,21 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 13:22:48 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/17 15:56:08 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/17 03:16:47 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/17 12:09:53 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int		ft_strlen(char *str);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
-int		ft_atoi(char *str);
-void	ft_putnbr_base(int nbr, char *base);
-int		ft_atoi_base(char *str, char *base);
+char	*ft_strdup(char *src);
+int		*ft_range(int min, int max);
+int		ft_ultimate_range(int **range, int min, int max);
+char	*ft_strjoin(int size, char **strs, char *sep);
+char	**ft_split(char *str, char *charset);
+
+int		ft_wc(char *str, char *charset);
 
 int	main(void)
 {
+	char	**tab;
+
+	tab = ft_split(" Bonjour    vous !", " ");
+	if (tab)
+	{
+		printf("`%s`\n", tab[1]);
+		free(tab);
+	}
+	printf("%d\n", ft_wc("       bonjour      a vous     ", " "));
 	return (0);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maykman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 08:09:49 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/10 08:24:40 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/17 03:57:22 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	if (!div  || !mod || !b)
+	if (!div || !mod || !b)
 		return ;
 	*div = a / b;
 	*mod = a % b;
