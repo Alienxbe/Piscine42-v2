@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:43:41 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 19:25:38 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/17 18:54:38 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	ft_putnbr(int nb)
 	}
 	if (un >= 10)
 		ft_putnbr(un / 10);
-	ft_putchar(un % 10);
+	ft_putchar('0' + un % 10);
 }

@@ -6,7 +6,11 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 08:13:41 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/17 08:13:42 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/17 22:56:56 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void ft_putnbr_base(int nbr, char *base)
+{
+	
+}

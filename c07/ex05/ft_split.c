@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 08:14:03 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/17 15:27:13 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/17 22:42:17 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int	ft_ws(char *str, char *charset)
 	i = 0;
 	while (str[i] && !ft_strchr(charset, str[i]))
 		i++;
-	str[i] = 0;
 	return (i);
 }
 
@@ -82,10 +81,9 @@ char	**ft_split(char *str, char *charset)
 			tab[i] = (char *)malloc(sizeof(char) * (ft_ws(str, charset) + 1));
 			j = 0;
 			while (*str && !ft_strchr(charset, *str))
-				tab[i][j] = *str;
+				tab[i][j] = *str++;
 			i++;
 		}
-		printf("%s\n", str);
 		str++;
 	}
 	return (tab);

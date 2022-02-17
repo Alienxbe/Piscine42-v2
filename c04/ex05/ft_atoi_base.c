@@ -6,9 +6,11 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:52:22 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/15 19:29:28 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/17 21:57:24 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	ft_isspace(char c)
 {
@@ -41,7 +43,7 @@ int	check_base(char *base)
 		while (base[i + ++j])
 			if (base[i + j] == base[i])
 				return (0);
-		if (base[i] == '+' || base[i] == '-')
+		if (base[i] == '+' || base[i] == '-' || ft_isspace(base[i]))
 			return (0);
 	}
 	if (i < 2)
