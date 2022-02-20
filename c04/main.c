@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 13:22:48 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/17 19:17:39 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/20 11:40:12 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int		ft_atoi_base(char *str, char *base);
 
 int	main(void)
 {
-	// ft_putnbr_base(-2147483648, "01");
-	printf("%d\n", ft_atoi_base("-80000000", "0123456789abcde "));
+	ft_putnbr(-2147483648);
 	return (0);
 }

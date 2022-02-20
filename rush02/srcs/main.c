@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 16:07:22 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/20 11:51:40 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/19 16:08:35 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/20 10:53:13 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "includes.h"
 
-int	ft_iterative_factorial(int nb);
-int	ft_recursive_factorial(int nb);
-int	ft_iterative_power(int nb, int power);
-int	ft_recursive_power(int nb, int power);
-int	ft_fibonacci(int index);
-int	ft_sqrt(int nb);
-int	ft_is_prime(int nb);
-int	ft_find_next_prime(int nb);
-int	ft_ten_queens_puzzle(void);
-
-int	main(void)
+int	main(int argc, char **argv)
 {
-	printf("%d\n", ft_ten_queens_puzzle());
+	char	*file;
+	char	*filename;
+
+	(void)argc;
+	(void)argv;
+	file = NULL;
+	filename = "numbers.dict";
+	if (get_file(&file, filename))
+		printf("%s\n", file);
+	else
+		printf("ERROR\n");
 	return (0);
 }
