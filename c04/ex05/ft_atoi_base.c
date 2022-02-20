@@ -6,11 +6,9 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 14:52:22 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/17 21:57:24 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/20 14:36:35 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_isspace(char c)
 {

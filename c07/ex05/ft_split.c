@@ -6,12 +6,13 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 08:14:03 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/17 22:42:17 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/20 13:46:11 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 char	*ft_strchr(char *s, int c)
 {
@@ -26,17 +27,13 @@ char	*ft_strchr(char *s, int c)
 	return (NULL);
 }
 
-void	*ft_memcpy(char *dest, char *src, unsigned int n)
-{
-	while (n--)
-		dest[n] = src[n];
-	return (dest);
-}
-
-int	ft_wc(char *str, char *charset)
+int	ft_wc(char *str, char *charset, int *ws)
 {
 	int	wc;
+	int	first_word;
 
+	first_word = 1;
+	*ws = 0;
 	wc = 0;
 	while (str && *str)
 	{
@@ -44,47 +41,32 @@ int	ft_wc(char *str, char *charset)
 			str++;
 		if (*str && !ft_strchr(charset, *str))
 			wc++;
-		while (*str && !ft_strchr(charset, *str))
-			str++;
+		while (*str && !ft_strchr(charset, *str++))
+			if (first_word)
+				(*ws)++;
+		first_word = 0;
 	}
 	return (wc);
-}
-
-int	ft_ws(char *str, char *charset)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && !ft_strchr(charset, str[i]))
-		i++;
-	return (i);
 }
 
 char	**ft_split(char *str, char *charset)
 {
 	char	**tab;
+	int		ws;
 	int		wc;
 	int		i;
-	int		j;
 
 	if (!str || !charset)
 		return (NULL);
-	wc = ft_wc(str, charset);
+	wc = ft_wc(str, charset, &ws);
+	printf("%d | %d\n", wc, ws);
 	tab = (char **)malloc(sizeof(char *) * (wc + 1));
 	i = 0;
-	while (tab && *str)
+	while (ft_wc(str, charset, &ws))
 	{
-		while (*str && ft_strchr(charset, *str))
-			str++;
-		if (*str)
-		{
-			tab[i] = (char *)malloc(sizeof(char) * (ft_ws(str, charset) + 1));
-			j = 0;
-			while (*str && !ft_strchr(charset, *str))
-				tab[i][j] = *str++;
-			i++;
-		}
-		str++;
+		tab[i] = "Bonjour";
+		i++;
 	}
+	tab[wc] = 0;
 	return (tab);
 }
