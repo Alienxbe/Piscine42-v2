@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 03:49:52 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/22 00:18:20 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/21 13:38:04 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/21 13:41:41 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ex05/ft_stock_str.h"
 
-int	ft_ultimate_range(int **range, int min, int max)
+void				ft_show_tab(struct s_stock_str *par);
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av);
+
+int main(int argc, char **argv)
 {
-	int	*r;
-	int	i;
+	t_stock_str *tab;
 
-	if (!range)
-		return (-1);
-	if (min >= max)
-	{
-		*range = NULL;
-		return (-1);
-	}
-	r = (int *)malloc(sizeof(int) * (max - min));
-	if (!r)
-		return (-1);
-	i = -1;
-	while (++i < max - min)
-		r[i] = min + i;
-	*range = r;
-	return (max - min);
+	tab = ft_strs_to_tab(--argc, ++argv);
+	ft_show_tab(tab);
+	return (0);
 }

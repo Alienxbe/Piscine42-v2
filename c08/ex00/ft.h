@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   includes.h                                         :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/19 16:09:38 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/21 13:54:24 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/21 12:24:38 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/21 12:27:00 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDES_H
-# define INCLUDES_H
+#ifndef FT_H
+# define FT_H
 
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdlib.h>
-
-// Files functions
-int		get_file(char **line, char *filename);
-int		get_file_size(char *filename);
-
-// Utils functions
 void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
 void	ft_putstr(char *str);
-size_t	ft_strlen(char *str);
-void	*ft_calloc(size_t nmemb, size_t size);
-char	**ft_split(char *str, char *charset);
-char	**ft_free_tab(char **tab);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif

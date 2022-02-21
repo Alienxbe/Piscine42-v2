@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 08:14:03 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/20 23:03:40 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/21 14:12:54 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,3 +93,5 @@ char	**ft_split(char *str, char *charset)
 	}
 	return (tab);
 }
+
+{}

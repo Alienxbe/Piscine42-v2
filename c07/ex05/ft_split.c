@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 08:14:03 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/21 01:16:59 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/21 16:24:08 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ char	**ft_split(char *str, char *charset)
 	if (!str || !charset)
 		return (NULL);
 	tab = (char **)malloc(sizeof(char *) * (ft_wc(str, charset, &ws) + 1));
-	i = -1;
+	i = 0;
 	while (tab && ft_wc(str, charset, &ws))
 	{
 		while (*str && ft_strchr(charset, *str))
 			str++;
 		if (*str)
-			tab[++i] = ft_word_copy(&str, ws);
+			tab[i++] = ft_word_copy(&str, ws);
 	}
 	tab[i] = 0;
 	return (tab);

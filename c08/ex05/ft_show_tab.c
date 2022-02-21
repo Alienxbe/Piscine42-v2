@@ -1,48 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 09:20:03 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/21 14:03:12 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/21 13:21:05 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/21 21:50:47 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes.h"
+#include <unistd.h>
+#include "ft_stock_str.h"
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_putendl(char *str)
 {
 	while (str && *str)
-		ft_putchar(*str++);
+		write(1, str++, 1);
+	ft_putchar('\n');
 }
 
-size_t	ft_strlen(char *str)
+void	ft_putnbr(int nb)
 {
-	size_t	i;
+	unsigned int	un;
 
-	i = 0;
-	while (str && str[i])
-		i++;
-	return (i);
+	un = nb;
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		un = -nb;
+	}
+	if (un >= 10)
+		ft_putnbr(un / 10);
+	ft_putchar('0' + un % 10);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_show_tab(struct s_stock_str *par)
 {
-	char	*ptr;
-	size_t	n;
-
-	n = nmemb * size;
-	ptr = (char *)malloc(n);
-	if (!ptr)
-		return (NULL);
-	while (n--)
-		ptr[n] = 0;
-	return ((void *)ptr);
+	if (!par)
+		return ;
+	while (par->str)
+	{
+		ft_putendl(par->str);
+		ft_putnbr(par->size);
+		ft_putchar('\n');
+		ft_putendl(par->copy);
+		par++;
+	}
 }
