@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 11:52:18 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/20 22:03:55 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/21 02:15:21 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/21 02:17:02 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putstr(char *str)
+int	ft_intsize_base(unsigned int n, int base_len)
 {
-	while (str && *str)
-		write(1, str++, 1);
+	if (n < (unsigned int)base_len)
+		return (1);
+	return (ft_intsize_base(n / base_len, base_len) + 1);
 }
 
-int	main(int argc, char **argv)
+int	ft_index(char c, char *str)
 {
-	(void)argc;
-	ft_putstr(argv[0]);
-	write(1, "\n", 1);
-	return (0);
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		if (str[i] == c)
+			return (i);
+	return (-1);
 }

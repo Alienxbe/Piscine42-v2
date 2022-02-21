@@ -6,13 +6,24 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 08:14:03 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/21 01:16:59 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/20 23:03:40 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "includes.h"
 
-char	*ft_strchr(char *s, int c)
+char	**ft_free_tab(char **tab)
+{
+	int	i;
+
+	i = -1;
+	while (tab[++i])
+		free(tab[i]);
+	free(tab);
+	return (NULL);
+}
+
+static char	*ft_strchr(char *s, int c)
 {
 	while (s && *s)
 	{
@@ -25,7 +36,7 @@ char	*ft_strchr(char *s, int c)
 	return (NULL);
 }
 
-int	ft_wc(char *str, char *charset, int *ws)
+static int	ft_wc(char *str, char *charset, int *ws)
 {
 	int	wc;
 	int	first_word;
@@ -47,16 +58,15 @@ int	ft_wc(char *str, char *charset, int *ws)
 	return (wc);
 }
 
-char	*ft_word_copy(char **str, int ws)
+static char	*ft_word_copy(char **str, int ws)
 {
 	char	*ptr;
 	int		i;
 
-	ptr = (char *)malloc(sizeof(char) * (ws + 1));
+	ptr = (char *)ft_calloc(sizeof(char), ws + 1);
 	i = -1;
 	while (++i < ws)
 		ptr[i] = *(*str)++;
-	ptr[i] = 0;
 	return (ptr);
 }
 
@@ -68,7 +78,9 @@ char	**ft_split(char *str, char *charset)
 
 	if (!str || !charset)
 		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * (ft_wc(str, charset, &ws) + 1));
+	tab = (char **)ft_calloc(sizeof(char *), ft_wc(str, charset, &ws) + 1);
+	if (!tab)
+		return (NULL);
 	i = -1;
 	while (tab && ft_wc(str, charset, &ws))
 	{
@@ -76,7 +88,8 @@ char	**ft_split(char *str, char *charset)
 			str++;
 		if (*str)
 			tab[++i] = ft_word_copy(&str, ws);
+		if (*str && !tab[i])
+			return (ft_free_tab(tab));
 	}
-	tab[i] = 0;
 	return (tab);
 }

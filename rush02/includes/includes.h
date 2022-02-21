@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 16:09:38 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/20 11:18:37 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/20 22:12:06 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,7 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 size_t	ft_strlen(char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
+char	**ft_split(char *str, char *charset);
+char	**ft_free_tab(char **tab);
 
 #endif

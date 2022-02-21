@@ -6,7 +6,7 @@
 #    By: maykman <maykman@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/20 09:43:48 by maykman           #+#    #+#              #
-#    Updated: 2022/02/20 11:26:50 by maykman          ###   ########.fr        #
+#    Updated: 2022/02/20 23:08:30 by maykman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ INCLUDES	:=	/includes
 # FILES
 SRCS		:=	main.c \
 				read_file.c \
-				utils.c
+				utils.c \
+				ft_split.c
 OBJS		:=	$(addprefix srcs/, ${SRCS:.c=.o})
 
 # RULES

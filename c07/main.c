@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 03:16:47 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/20 13:46:00 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/21 02:42:08 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ char	**ft_split(char *str, char *charset);
 
 int	main(void)
 {
-	char	**tab;
-
-	tab = ft_split(" s d  ", " ");
-	printf("%s\n", tab[0]);
+	printf("`%s`\n", ft_convert_base("-2147483648", "0123456789", "01"));
 	return (0);
 }
