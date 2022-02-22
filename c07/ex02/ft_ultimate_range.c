@@ -6,7 +6,7 @@
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 03:49:52 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/22 14:08:24 by maykman          ###   ########.fr       */
+/*   Updated: 2022/02/22 18:38:35 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		*range = 0;
 		return (0);
 	}
-	r = (char *)malloc(sizeof(int) * (max - min));
+	r = (int *)malloc(sizeof(int) * (max - min));
 	if (!r)
 		return (-1);
 	i = -1;
