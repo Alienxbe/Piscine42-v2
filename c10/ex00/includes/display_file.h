@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   display_file.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 03:49:52 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/23 12:38:03 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/24 16:48:54 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/24 18:44:29 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef DISPLAY_FILE_H
+# define DISPLAY_FILE_H
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	int	*r;
-	int	i;
+# include <fcntl.h>
+# include <unistd.h>
 
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	r = (int *)malloc(sizeof(int) * (max - min));
-	if (!r)
-		return (-1);
-	i = -1;
-	while (++i < max - min)
-		r[i] = min + i;
-	*range = r;
-	return (max - min);
-}
+# define BUFFER_SIZE		1024
+# define NOARG_ERROR		1
+# define MANYARG_ERROR		2
+# define WRONGFILE_ERROR	3
+
+int		read_file(int fd);
+void	ft_error_message(int error);
+
+#endif

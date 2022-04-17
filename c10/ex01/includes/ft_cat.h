@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_cat.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 03:49:52 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/23 12:38:03 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/24 19:08:02 by maykman           #+#    #+#             */
+/*   Updated: 2022/02/24 21:35:55 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_CAT_H
+# define FT_CAT_H
 
-int	ft_ultimate_range(int **range, int min, int max)
-{
-	int	*r;
-	int	i;
+# include <fcntl.h>
+# include <unistd.h>
+# include <errno.h>
 
-	if (min >= max)
-	{
-		*range = NULL;
-		return (0);
-	}
-	r = (int *)malloc(sizeof(int) * (max - min));
-	if (!r)
-		return (-1);
-	i = -1;
-	while (++i < max - min)
-		r[i] = min + i;
-	*range = r;
-	return (max - min);
-}
+# define BUFFER_SIZE	1024
+
+int	read_file(int fd);
+
+#endif

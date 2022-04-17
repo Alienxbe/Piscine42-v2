@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maykman <maykman@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/17 03:49:52 by maykman           #+#    #+#             */
-/*   Updated: 2022/02/23 12:38:03 by maykman          ###   ########.fr       */
+/*   Created: 2022/02/24 17:56:18 by maykman           #+#    #+#             */
+/*   Updated: 2022/04/05 18:34:54 by maykman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_cat.h"
 
-int	ft_ultimate_range(int **range, int min, int max)
+int	open_file(char *filename)
 {
-	int	*r;
-	int	i;
+	if (!filename)
+		return (STDIN_FILENO);
+	return (open(filename, O_RDONLY));
+}
 
-	if (min >= max)
+int	read_file(int fd)
+{
+	char	buff[BUFFER_SIZE + 1];
+	int		byte;
+
+	byte = 1;
+	while (byte > 0)
 	{
-		*range = NULL;
-		return (0);
+		byte = read(fd, buff, BUFFER_SIZE);
+		buff[byte] = 0;
+		write(1, buff, byte);
 	}
-	r = (int *)malloc(sizeof(int) * (max - min));
-	if (!r)
-		return (-1);
-	i = -1;
-	while (++i < max - min)
-		r[i] = min + i;
-	*range = r;
-	return (max - min);
+	return (0);
 }
